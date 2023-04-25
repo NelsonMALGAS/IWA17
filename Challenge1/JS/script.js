@@ -43,10 +43,10 @@ const createData = () => {
 
   // Create array of the number of weeks in the month & number of days in the week.
   const numWeeks = Math.ceil(daysInMonth / 7);
-  const weeks = createArray(numWeeks + (numWeeks === 5 ? 1 : 0));
+  const weeks = createArray(6);
   const days = createArray(7);
 
-  // Iterate over the weeks array and fill in the days array for each week.
+  // Iterate(repeat) over the weeks array and fill in the days array for each week.
   for (let weekIndex = 0; weekIndex < weeks.length; weekIndex++) {
     const value = {
       week: weekIndex + 1,
@@ -88,7 +88,7 @@ const createHtml = (data) => {
     let inner = '';
        // Add the week number to the sidebar of the table.
     inner = addCell(`Week ${week.week}`, 'table__cell table__cell_sidebar', inner);
-        // Iterate over the days in the week and add them to the table.
+        // Iterate(repeat) over the days in the week and add them to the table.
     for (const day of week.days) {
       let classString = 'table__cell';
        // Check if the day is today.

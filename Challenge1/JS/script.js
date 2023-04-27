@@ -65,7 +65,7 @@ const createData = () => {
 
     weeks[weekIndex] = value;
   }
-
+  console.log(weeks)
   return weeks;
 };
 
@@ -83,6 +83,16 @@ const addCell = (existing, classString) => {
 
 const createHtml = (data) => {
   let result = '';
+
+    // Check if the last week in the data array is empty
+    const lastWeek = data[data.length - 1];
+    const isEmptyWeek = lastWeek.days.every(day => day.value === null);
+  
+    // If it's empty, remove it from the data array
+    if (isEmptyWeek) {
+      data.pop();
+    }
+  
 
   for (const week of data) {
     let inner = '';
@@ -116,6 +126,7 @@ const createHtml = (data) => {
 
   return result;
 };
+
 
 
   // Only edit above

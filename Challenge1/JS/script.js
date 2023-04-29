@@ -32,7 +32,7 @@ const createArray = (length) => {
 
 
 // A function that creates an array of data representing the days in the current month.
-const createData = () => {
+  const createData = () => {
   const current = new Date();
 
   const firstDayOfMonth = new Date(current.getFullYear(), current.getMonth(), 1);

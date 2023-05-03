@@ -42,7 +42,7 @@ const createArray = (length) => {
   const daysInMonth = getDaysInMonth(firstDayOfMonth);
 
   // Create array of the number of weeks in the month & number of days in the week.
-  const numWeeks = Math.ceil(daysInMonth / 7);
+  
   const weeks = createArray(6);
   const days = createArray(7);
 
@@ -58,6 +58,7 @@ const createArray = (length) => {
       const isValid = day > 0 && day <= daysInMonth;
 
       value.days.push({
+        
         dayOfWeek: parseInt(dayIndex) + 1,
         value: isValid ? day : null,
       });
